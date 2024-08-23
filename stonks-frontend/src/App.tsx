@@ -7,7 +7,7 @@ import ParseTest from "./components/ParseTest";
 function App() {
   return (
     <div className="App">
-      <CandlestickChart />
+      <ParseTest />
     </div>
   );
 }
