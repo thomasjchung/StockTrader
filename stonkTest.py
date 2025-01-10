@@ -7,7 +7,7 @@ FRONTEND_WEBSOCKET_PORT = 6789
 clients = set()
 
 async def listen():
-    url = "wss://stream.data.alpaca.markets/v2/test"
+    url = "wss://stream.data.alpaca.markets/v2/iex"
     headers = {
         'APCA-API-KEY-ID': API_KEY,
         'APCA-API-SECRET-KEY': API_SECRET
@@ -15,7 +15,7 @@ async def listen():
     async with websockets.connect(url, extra_headers = headers) as websocket:
         subscribe_message = json.dumps({
             "action": "subscribe",
-            "bars": ["FAKEPACA"]
+            "bars": ["AAPL"]
         })
         await websocket.send(subscribe_message)
 
